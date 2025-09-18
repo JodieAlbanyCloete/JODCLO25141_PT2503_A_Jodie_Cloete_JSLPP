@@ -1,4 +1,9 @@
 #loading-message {
-  border: 5px solid red;
+  border: 5px solid #635fc7;
+  background-color: #635fc7;
+  color: aliceblue;
   font-size: 20px;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
