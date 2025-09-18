@@ -8,6 +8,7 @@
     />
 
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="stylesheet.css" />
     <link
       rel="icon"
       type="image/png"
@@ -34,7 +35,6 @@
 
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
     <div id="layout">
-      <div id="loading-message">Loading Tasks</div>
       <header id="header" class="sticky-header">
         <div class="header-name-div">
           <img
@@ -50,6 +50,8 @@
           + Add New Task
         </button>
       </header>
+
+      <div id="loading-message">Loading Tasks</div>
 
       <div class="container">
         <main class="card-column-main">
