@@ -16,6 +16,10 @@ import {
 // document.addEventListener("DOMContentLoaded", initTaskBoard);
 
 // Fetch tasks from API
+function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 async function fetchTasksFromAPI() {
   try {
     const response = await fetch("https://jsl-kanban-api.vercel.app/");
@@ -56,3 +60,35 @@ async function initTaskBoard() {
 }
 
 document.addEventListener("DOMContentLoaded", initTaskBoard);
+
+const loadingEl = document.querySelector("#loading-message");
+
+async function fetchTasks() {
+  try {
+    // Show loading message
+    loadingEl.style.display = "block";
+
+    // Fetch tasks from API
+    const response = await fetch("https://jsl-kanban-api.vercel.app/");
+    const tasks = await response.json();
+
+    // // Hide loading message
+    loadingEl.style.display = "none";
+
+    // Render tasks
+    renderTasks(tasks);
+  } catch (error) {
+    loadingEl.textContent = "Failed to load tasks";
+    console.error("Error fetching tasks:", error);
+  }
+}
+function displayTasks(tasks) {
+  taskBoard.innerHTML = "";
+  tasks.forEach(function (task) {
+    var taskEl = document.createElement("div");
+    taskEl.textContent = task.title;
+    taskBoard.appendChild(taskEl);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", fetchTasks);
