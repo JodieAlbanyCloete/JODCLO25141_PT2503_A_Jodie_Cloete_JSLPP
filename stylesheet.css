@@ -7,3 +7,23 @@
   padding: 0.5rem;
   margin: 0.5rem;
 }
+
+#saveChangesBtn {
+  background-color: #635fc7;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  border: #635fc7;
+  padding: 1rem;
+  width: 40%;
+}
+
+#deleteTaskBtn {
+  background-color: #ea5555;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  border: #ea5555;
+  padding: 1rem;
+  width: 40%;
+}
