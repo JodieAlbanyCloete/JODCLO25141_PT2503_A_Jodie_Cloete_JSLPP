@@ -16,6 +16,7 @@
       href="./assets/favicon.svg"
     />
     <script defer src="./scripts/main.js" type="module"></script>
+    <script defer src="./scripts/ui/modalHandlers.js" type="module"></script>
 
     <title>Kanban Task Management</title>
   </head>
@@ -107,6 +108,8 @@
           <option value="doing">doing</option>
           <option value="done">done</option>
         </select>
+        <button id="saveChangesBtn">Save Changes</button>
+        <button id="deleteTaskBtn">Delete Task</button>
       </form>
     </dialog>
     <!-- New Task Modal: Form for adding a new task. -->
