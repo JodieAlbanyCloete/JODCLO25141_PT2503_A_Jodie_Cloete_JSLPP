@@ -3,6 +3,7 @@ import { openTaskModal } from "./modalHandlers.js";
 export function createTaskElement(task) {
   const taskDiv = document.createElement("div");
   taskDiv.className = "task-div";
+  taskDiv.dataset.id = task.id;
   taskDiv.textContent = task.title;
   taskDiv.dataset.taskId = task.id;
 
