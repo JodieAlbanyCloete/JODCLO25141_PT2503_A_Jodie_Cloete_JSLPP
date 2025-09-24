@@ -17,6 +17,7 @@
     />
     <script defer src="./scripts/main.js" type="module"></script>
     <script defer src="./scripts/ui/modalHandlers.js" type="module"></script>
+    <script defer src="./scripts/tasks/taskManager.js" type="module"></script>
 
     <title>Kanban Task Management</title>
   </head>
@@ -89,6 +90,7 @@
     <!-- Modal: Displays each tasks details when the task is clicked -->
     <dialog id="task-modal">
       <form method="dialog" id="task-form">
+        <input type="hidden" id="task-id" />
         <div class="modal-header">
           <h3>Task</h3>
           <button type="button" class="close-btn" id="close-modal-btn">
