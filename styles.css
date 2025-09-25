@@ -403,8 +403,17 @@ textarea {
 
 /******** Tablets ********/
 @media screen and (max-width: 1023px) {
+  #logo {
+    cursor: pointer;
+  }
+
   .side-bar {
     display: none; /* Hide sidebar on tablets and smaller */
+  }
+
+  /* Show sidebar when open */
+  .side-bar.open {
+    left: 0;
   }
 
   .side-bar.show-sidebar {
@@ -414,7 +423,8 @@ textarea {
   }
 
   #side-logo-div {
-    display: none;
+    display: flex;
+    justify-content: center;
   }
 
   .logo-mobile {
