@@ -27,3 +27,77 @@
   padding: 1rem;
   width: 40%;
 }
+
+.theme-toggle {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hide native checkbox appearance */
+.theme-toggle input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  width: 80%;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+  margin-top: 30rem;
+  margin-left: 2rem;
+}
+
+/* Move the checkbox circle when checked */
+.theme-toggle input:checked {
+  transform: translateX(1rem);
+  background-color: white;
+  border-color: #007bff;
+}
+
+/* Sun/Moon icons */
+.icon {
+  font-size: 16px;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sun {
+  opacity: 1;
+}
+.moon {
+  opacity: 1;
+}
+
+.theme-toggle input:checked ~ .moon {
+  opacity: 1;
+}
+
+.theme-toggle input:checked ~ .sun {
+  opacity: 0;
+}
+
+/* Change slider background on checked */
+.theme-toggle input:checked ~ .slider {
+  background-color: #f4f7fd;
+}

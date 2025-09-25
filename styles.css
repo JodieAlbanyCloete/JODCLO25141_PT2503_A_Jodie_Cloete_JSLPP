@@ -15,6 +15,13 @@
   --sidebar-width: 300px; /* Sidebar fixed width */
 }
 
+/* Dark theme overrides */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --primary-color: #635fc7;
+}
+
 /* ================
    Base Elements
 ================ */
