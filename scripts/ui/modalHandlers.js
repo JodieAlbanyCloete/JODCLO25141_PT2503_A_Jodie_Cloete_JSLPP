@@ -37,3 +37,19 @@ export function openTaskModal(task) {
   document.getElementById("task-status").value = task.status;
   modal.showModal();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sideModalBtn = document.querySelector(".logo-mobile");
+  const sideModal = document.querySelector(".side-modal");
+  const modalCloseButton = document.querySelector(".modal-close");
+
+  sideModalBtn.addEventListener("click", () => {
+    sideModal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  });
+
+  modalCloseButton.addEventListener("click", () => {
+    sideModal.style.display = "none";
+    document.body.style.overflow = "initial";
+  });
+});
