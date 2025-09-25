@@ -1,88 +1,87 @@
-# JSL05 Solution Code
+**Kanban Board - JSL Portfolio Piece
 
-## Overview
+A lightweight Kanban board built with HTML, CSS, and JavaScript.
+This project allows you to create, edit, and manage tasks visually in a board layout, with support for local storage and API integration.
 
-This solution builds on the previous challenge (JSL04) by introducing **major improvements**:
+🚀 Features
 
-✅ **Modular code structure** – All logic has been broken down into responsibility-based modules  
-✅ **Local storage integration** – Tasks are now loaded from and saved to localStorage  
-✅ **Task creation modal** – Users can add new tasks via a form-driven modal interface
+* 📋 Task Management: Edit and delete tasks.
 
-These changes make the project more scalable, persistent across sessions, and easier to extend with future features like editing or deleting tasks.
+* 📂 Columns/Statuses: Organize tasks by status (e.g., Todo, In Progress, Done).
 
-## Learning goals
+* 💾 Persistence: Saves tasks to localStorage or fetches from an API.
 
-By studying the JSL05 solution, you will:
+* 🎨 Themes: Toggle between light and dark mode.
 
-- Understand how to **organise JavaScript code into modules** using `import/export`.
-- Use **localStorage** as the single source of truth for all task data.
-- Dynamically **render tasks grouped by status** into columns.
-- Implement **task creation via modal form** with form validation.
-- Apply **separation of concerns** and clean architectural practices.
+* 📱 Responsive: Works across desktop, tablet, and mobile.
 
-## New Features in JSL05
+* ⚡ Instant UI Updates: Changes reflect immediately in the board without a page reload.
 
-| Feature                 | Description                                                      |
-| ----------------------- | ---------------------------------------------------------------- |
-| 🧩 Modular JS files     | Logic is split across folders like `ui/`, `tasks/`, and `utils/` |
-| 💾 Persistent storage   | All tasks are saved and retrieved using `localStorage`           |
-| ➕ Add new task feature | A modal lets users input a new task and assign its status        |
+** 📂 Project Structure
+kanban-project/
+│
+├── index.html        # Main HTML page
+├── style.css         # Global styles
+├── script.js         # Main JS logic (if all-in-one)
+│
+├── assets/           # Logos, icons, images
+├── tasks/            # JS modules for task handling
+│   ├── taskManager.js  # Core task management (CRUD, storage, API sync)
+│   └── render.js       # Rendering logic for the board & tasks
+│
+└── README.md         # Documentation
 
-## File structure
+⚙️ Setup
+1. Clone JSL05 Solution Repository
 
-├── `index.html` # HTML structure with empty columns & modals
+2. Open in Browser
 
-├── `styles.css` # Layout and dialog styling
+Simply open index.html in your browser.
+No build step required.
 
-├── `initialData.js` # Fallback seed data for first load
+📝 Usage
 
-├── /scripts
+** Edit a Task
 
-│ ├── `main.js` # Entry point: init board, attach handlers
+Click on a task card.
 
-│ ├── /ui
+Update details in the modal.
 
-│ │ ├── `render.js` # Functions to render/clear tasks in columns
+Save changes → Board updates instantly.
 
-│ │ ├──` taskElement.js` # Generates individual .task-divs
+Release → Task status updates.
 
-│ │ └── `modalHandlers.js` # Handles modal open/close logic
+** Persistence
 
-│ ├── /tasks
+** Tasks are saved in localStorage.
 
-│ │ ├── `taskManager.js` # Logic for adding new tasks to storage/UI
+Tasks are fetched and synced automatically.
 
-│ │ └── `formUtils.js` # Utility to reset form fields
+🔧 Technologies
 
-│ └── /utils
+HTML5 for structure
 
-│ └── `localStorage.js` # Reads/writes task list to localStorage
+CSS3 / Flexbox / Grid for layout and styling
 
-└── `README.md` # ← you are here
+Vanilla JavaScript (ES6+) for logic
 
-### Module overview
+localStorage / API for data persistence
 
-| File/Function                                     | Responsibility                                            |
-| ------------------------------------------------- | --------------------------------------------------------- |
-| `main.js`                                         | Initialise task board on DOM load                         |
-| `renderTasks(tasks)`                              | Display tasks in the correct columns                      |
-| `createTaskElement(task)`                         | Build one `.task-div` and attach click handlers           |
-| `openTaskModal(task)`                             | Prefills and shows the edit modal (view-only for now)     |
-| `addNewTask()`                                    | Constructs, saves, and renders new task from form input   |
-| `resetForm()`                                     | Clears input fields after task creation                   |
-| `setupNewTaskModalHandler()`                      | Opens the creation modal, validates, and submits new task |
-| `loadTasksFromStorage()` / `saveTasksToStorage()` | LocalStorage persistence                                  |
+** 🌙 Dark & Light Mode
 
-## Running the solution
+Toggle the theme switch in the sidebar to switch between dark mode 🌙 and light mode ☀️.
 
-1. **Clone / download** the repo.
-2. Open `index.html` with **Live Server** or any modern browser.
-3. Explore:
-   - Click the “Add New Task” button to open the modal.
-   - Fill out and submit the form to create a task.
-   - Reload the page to verify tasks persist via localStorage.
-   - Click a task card to view its details in the preview modal.
+📌 Roadmap / Future Improvements
 
-## License
+ User authentication & multi-user boards
 
-Provided for **educational purposes only**.
+ Custom board creation (multiple boards)
+
+ Task labels / priorities
+
+ Due dates & reminders
+
+** 🤝 Important Links 
+Netlify - https://jodiecloetejslportfoliopiece.netlify.app/
+Zoom -
+
