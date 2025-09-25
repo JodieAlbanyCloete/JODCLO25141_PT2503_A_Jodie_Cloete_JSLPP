@@ -1,4 +1,4 @@
-**Kanban Board - JSL Portfolio Piece
+** 👑 Kanban Board - JSL Portfolio Piece 👑
 
 A lightweight Kanban board built with HTML, CSS, and JavaScript.
 This project allows you to create, edit, and manage tasks visually in a board layout, with support for local storage and API integration.
@@ -59,13 +59,13 @@ Tasks are fetched and synced automatically.
 
 🔧 Technologies
 
-HTML5 for structure
+* HTML5 for structure
 
-CSS3 / Flexbox / Grid for layout and styling
+* CSS & Flexbox 
 
-Vanilla JavaScript (ES6+) for logic
+* JavaScript for logic
 
-localStorage / API for data persistence
+* localStorage / API for data persistence
 
 ** 🌙 Dark & Light Mode
 
