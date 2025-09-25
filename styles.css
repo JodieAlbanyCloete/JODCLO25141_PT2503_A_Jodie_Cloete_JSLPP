@@ -18,8 +18,16 @@
 /* Dark theme overrides */
 .dark-theme {
   --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --primary-color: #635fc7;
+  --task-text-color: #f0f0f0;
+  --primary-color: #20212c;
+}
+
+.dark-theme .container {
+  background-color: #20212c;
+}
+
+.dark-theme .task-div {
+  color: #ffffff; /* text color in dark mode */
 }
 
 /* ================
