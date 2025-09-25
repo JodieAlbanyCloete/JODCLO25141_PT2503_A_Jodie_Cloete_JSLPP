@@ -14,6 +14,7 @@
 
 .side-modal-top {
   display: flex;
+  align-items: space-between;
 }
 
 .side-modal {
@@ -26,6 +27,8 @@
   display: none;
   justify-content: center;
   align-items: flex-start;
+  border: #364e7e40;
+  box-shadow: #364e7e40;
 }
 
 .side-bar-modal {
