@@ -7,7 +7,7 @@ This project allows you to create, edit, and manage tasks visually in a board la
 
 * 📋 Task Management: Edit and delete tasks.
 
-* 📂 Columns/Statuses: Organize tasks by status (e.g., Todo, In Progress, Done).
+* 📂 Columns/Statuses: Organize tasks by status (e.g., Todo, Doing, Done).
 
 * 💾 Persistence: Saves tasks to localStorage or fetches from an API.
 
