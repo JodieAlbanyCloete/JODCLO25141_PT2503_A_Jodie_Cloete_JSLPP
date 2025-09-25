@@ -1,5 +1,4 @@
 import { addNewTask } from "../tasks/taskManager.js";
-import { editTask } from "../tasks/taskManager.js";
 
 export function setupModalCloseHandler() {
   const modal = document.getElementById("task-modal");

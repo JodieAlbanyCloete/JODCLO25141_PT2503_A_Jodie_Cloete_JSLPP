@@ -31,33 +31,52 @@ export function addNewTask() {
 }
 
 export function editTask(taskId) {
-  const title = document.getElementById("title-input").value.trim();
-  const description = document.getElementById("desc-input").value.trim();
-  const status = document.getElementById("select-status").value;
-  const overlay = document.querySelector(".modal-overlay");
+  const title = document.getElementById("task-title").value.trim();
+  const description = document.getElementById("task-desc").value.trim();
+  const status = document.getElementById("task-status").value;
+  const overlay = document.querySelector("task-modal");
 
   if (!title) return;
 
   const tasks = loadTasksFromStorage() || [];
+  let updatedTask = null;
 
-  const updatedTasks = tasks.map(function (task) {
+  const updatedTasks = tasks.map((task) => {
     if (task.id === taskId) {
-      console.log("Found task to update:", task);
-      return {
+      updatedTask = {
         ...task,
-        title: title,
-        description: description,
-        status: status,
+        title,
+        description,
+        status,
       };
+      return updatedTask;
     }
     return task;
   });
 
+  // Save updated tasks
   saveTasksToStorage(updatedTasks);
-  clearExistingTasks();
-  renderTasks(updatedTasks);
+
+  // ✅ Update the DOM in place
+  if (updatedTask) {
+    const taskEl = document.querySelector(
+      `.task-div[data-id="${updatedTask.id}"]`
+    );
+    if (taskEl) {
+      // Update content
+      taskEl.textContent = updatedTask.title;
+
+      // Move to correct column if status changed
+      const container = document.querySelector(
+        `.column-div[data-status="${updatedTask.status}"] .tasks-container`
+      );
+      if (container && taskEl.parentElement !== container) {
+        container.appendChild(taskEl);
+      }
+    }
+  }
+
   resetForm();
-  overlay.close?.(); // optional in case overlay is a <dialog>
 }
 
 saveChangesBtn.addEventListener("click", function () {

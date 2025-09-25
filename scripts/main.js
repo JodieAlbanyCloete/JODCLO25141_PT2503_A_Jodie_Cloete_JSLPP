@@ -32,6 +32,7 @@ async function fetchTasksFromAPI() {
 }
 
 async function initTaskBoard() {
+  console.log("initTaskBoard running...");
   clearExistingTasks();
 
   // 1. Get API + local tasks
@@ -82,13 +83,3 @@ async function fetchTasks() {
     console.error("Error fetching tasks:", error);
   }
 }
-function displayTasks(tasks) {
-  taskBoard.innerHTML = "";
-  tasks.forEach(function (task) {
-    var taskEl = document.createElement("div");
-    taskEl.textContent = task.title;
-    taskBoard.appendChild(taskEl);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", fetchTasks);
