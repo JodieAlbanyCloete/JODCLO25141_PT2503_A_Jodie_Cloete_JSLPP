@@ -17,7 +17,7 @@
 
 /* Dark theme overrides */
 .dark-theme {
-  --bg-color: #121212;
+  background-color: #20212c;
   --task-text-color: #f0f0f0;
   --primary-color: #20212c;
 }
@@ -28,6 +28,19 @@
 
 .dark-theme .task-div {
   color: #ffffff; /* text color in dark mode */
+  background-color: #2b2c37;
+}
+
+.dark-theme #header-board-name {
+  color: #ffffff; /* text color in dark mode */
+}
+
+.dark-theme #side-bar-div {
+  background-color: #2b2c37;
+}
+
+.dark-theme #header {
+  background-color: #2b2c37;
 }
 
 /* ================
