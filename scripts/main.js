@@ -35,6 +35,9 @@ async function initTaskBoard() {
   console.log("initTaskBoard running...");
   clearExistingTasks();
 
+  const loadingEl = document.querySelector("#loading-message");
+  loadingEl.style.display = "block"; // show while loading
+
   // 1. Get API + local tasks
   const [apiTasks, localTasks] = await Promise.all([
     fetchTasksFromAPI(),
@@ -50,7 +53,8 @@ async function initTaskBoard() {
   ];
 
   // 3. Render merged tasks
-  renderTasks(mergedTasks);
+  await renderTasks(mergedTasks);
+  loadingEl.style.display = "none";
 
   // 4. Save merged tasks so refresh doesn’t double them
   saveTasks(mergedTasks);
