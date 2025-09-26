@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const toggleBtn = document.getElementById("toggle-button");
   const body = document.body;
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2️⃣ Save theme to localStorage on toggle
-  toggleBtn.addEventListener("change", () => {
+  toggleBtn.addEventListener("change", function () {
     if (toggleBtn.checked) {
       body.classList.add("dark-theme");
       localStorage.setItem("theme", "dark"); // ✅ Save dark theme
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const sideToggleBtn = document.getElementById("side-toggle-button");
   const body = document.body;
 
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2️⃣ Save theme to localStorage on toggle
-  sideToggleBtn.addEventListener("change", () => {
+  sideToggleBtn.addEventListener("change", function () {
     if (sideToggleBtn.checked) {
       body.classList.add("dark-theme");
       localStorage.setItem("theme", "dark"); // ✅ Save dark theme
