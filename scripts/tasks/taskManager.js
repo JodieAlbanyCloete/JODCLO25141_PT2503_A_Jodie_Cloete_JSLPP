@@ -103,7 +103,7 @@ export function deleteTask(taskId) {
   tasks = tasks.filter((task) => task.id !== parseInt(taskId, 10));
 
   // 3. API delete request
-  fetch(`https://jsl-kanban-api.vercel.app/tasks/${taskId}`, {
+  fetch(`https://jsl-kanban-api.vercel.app/${taskId}`, {
     method: "DELETE",
   })
     .then((res) => {

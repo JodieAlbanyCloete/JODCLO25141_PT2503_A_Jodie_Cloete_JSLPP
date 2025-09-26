@@ -515,4 +515,18 @@ textarea {
     padding-top: 0;
     padding-bottom: 0;
   }
+
+  .task-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #saveChangesBtn {
+    width: 80%;
+  }
+
+  #deleteTaskBtn {
+    width: 40%;
+  }
 }
