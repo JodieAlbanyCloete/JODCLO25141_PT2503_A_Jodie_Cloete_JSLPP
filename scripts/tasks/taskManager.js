@@ -5,6 +5,8 @@ import {
 import { clearExistingTasks, renderTasks } from "../ui/render.js";
 import { resetForm } from "./formUtils.js";
 
+export let tasks = [];
+
 export function addNewTask() {
   const title = document.getElementById("title-input").value.trim();
   const description = document.getElementById("desc-input").value.trim();
@@ -90,4 +92,38 @@ saveChangesBtn.addEventListener("click", function () {
 
   console.log("Editing task with ID:", taskId);
   editTask(taskId);
+});
+
+export function deleteTask(taskId) {
+  const deleteEl = document.querySelector(`.task-div[data-id="${taskId}"]`);
+  if (deleteEl) {
+    deleteEl.remove();
+  }
+  // 2. Remove from in-memory array
+  // tasks = tasks.filter((task) => task.id !== parseInt(taskId, 10));
+
+  // 3. API delete request
+  fetch(`https://jsl-kanban-api.vercel.app/tasks/${taskId}`, {
+    method: "DELETE",
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to delete task");
+      console.log(`Task ${taskId} deleted successfully`);
+    })
+    .catch((err) => {
+      console.error("Error deleting task:", err);
+      // Optional rollback if you want to re-add the task
+    });
+}
+
+const deleteBtn = document.getElementById("deleteTaskBtn");
+
+deleteBtn.addEventListener("click", (e) => {
+  e.preventDefault(); // stop form submission
+
+  const taskId = document.getElementById("task-id").value;
+  if (!taskId) return;
+
+  // Call delete function
+  deleteTask(taskId);
 });
