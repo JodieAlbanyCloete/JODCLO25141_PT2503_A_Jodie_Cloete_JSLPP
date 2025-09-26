@@ -27,79 +27,80 @@
 
   <body>
     <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
-
-    <nav class="side-bar" id="side-bar-div">
-      <div id="side-logo-div">
-        <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
-      </div>
-
-      <div class="boards-nav-links-div" id="boards-nav-links-div">
-        <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
-        <button class="board-btn">Launch Career</button>
-      </div>
-      <label class="theme-toggle">
-        <div class="slider">
-          <span class="icon sun">☀️</span>
-          <input type="checkbox" id="toggle-button" />
-          <span class="icon moon">🌙</span>
+    <div class="main-content">
+      <nav class="side-bar" id="side-bar-div">
+        <div id="side-logo-div">
+          <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
         </div>
-      </label>
-      <button class="hide-sidebar">
-        <span class="icon stop">🚫</span>
-        <span>Hide Sidebar</span>
-      </button>
-    </nav>
 
-    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
-    <div id="layout">
-      <header id="header" class="sticky-header">
-        <div class="header-name-div">
-          <img
-            src="./assets/favicon.svg"
-            alt="logo-mobile"
-            class="logo-mobile"
-          />
-          <h2 class="header-board-name" id="header-board-name">
-            Launch Career
-          </h2>
+        <div class="boards-nav-links-div" id="boards-nav-links-div">
+          <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
+          <button class="board-btn">Launch Career</button>
         </div>
-        <button id="add-new-task-btn" class="primary-btn">
-          + Add New Task
+        <label class="theme-toggle">
+          <div class="slider">
+            <span class="icon sun">☀️</span>
+            <input type="checkbox" id="toggle-button" />
+            <span class="icon moon">🌙</span>
+          </div>
+        </label>
+        <button class="hide-sidebar">
+          <span class="icon stop">🚫</span>
+          <span>Hide Sidebar</span>
         </button>
-      </header>
+      </nav>
 
-      <div id="loading-message">Loading Tasks</div>
+      <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
+      <div id="layout">
+        <header id="header" class="sticky-header">
+          <div class="header-name-div">
+            <img
+              src="./assets/favicon.svg"
+              alt="logo-mobile"
+              class="logo-mobile"
+            />
+            <h2 class="header-board-name" id="header-board-name">
+              Launch Career
+            </h2>
+          </div>
+          <button id="add-new-task-btn" class="primary-btn">
+            + Add New Task
+          </button>
+        </header>
 
-      <div class="container">
-        <main class="card-column-main">
-          <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
-          <div class="column-div" data-status="todo">
-            <div id="todo-head-div" class="column-head-div">
-              <span class="dot" id="todo-dot"></span>
-              <h4 id="toDoText" class="columnHeader">TODO (2)</h4>
+        <div id="loading-message">Loading Tasks</div>
+
+        <div class="container">
+          <main class="card-column-main">
+            <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
+            <div class="column-div" data-status="todo">
+              <div id="todo-head-div" class="column-head-div">
+                <span class="dot" id="todo-dot"></span>
+                <h4 id="toDoText" class="columnHeader">TODO (2)</h4>
+              </div>
+              <!-- Tasks container for TODO -->
+              <div class="tasks-container"></div>
             </div>
-            <!-- Tasks container for TODO -->
-            <div class="tasks-container"></div>
-          </div>
-          <!-- DOING Column -->
-          <div class="column-div" data-status="doing">
-            <div id="doing-head-div" class="column-head-div">
-              <span class="dot" id="doing-dot"></span>
-              <h4 id="doingText" class="columnHeader">DOING (2)</h4>
+            <!-- DOING Column -->
+            <div class="column-div" data-status="doing">
+              <div id="doing-head-div" class="column-head-div">
+                <span class="dot" id="doing-dot"></span>
+                <h4 id="doingText" class="columnHeader">DOING (2)</h4>
+              </div>
+              <!-- Tasks container for DOING -->
+              <div class="tasks-container"></div>
             </div>
-            <!-- Tasks container for DOING -->
-            <div class="tasks-container"></div>
-          </div>
-          <!-- DONE Column -->
-          <div class="column-div" data-status="done">
-            <div id="done-head-div" class="column-head-div">
-              <span class="dot" id="done-dot"></span>
-              <h4 id="doneText" class="columnHeader">DONE (2)</h4>
+            <!-- DONE Column -->
+            <div class="column-div" data-status="done">
+              <div id="done-head-div" class="column-head-div">
+                <span class="dot" id="done-dot"></span>
+                <h4 id="doneText" class="columnHeader">DONE (2)</h4>
+              </div>
+              <!-- Tasks container for DONE -->
+              <div class="tasks-container"></div>
             </div>
-            <!-- Tasks container for DONE -->
-            <div class="tasks-container"></div>
-          </div>
-        </main>
+          </main>
+        </div>
       </div>
     </div>
     <!-- Modal: Displays each tasks details when the task is clicked -->
