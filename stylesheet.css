@@ -105,3 +105,13 @@
 .side-modal {
   display: none;
 }
+
+.hide-sidebar {
+  margin: 0.5rem;
+  width: 80%;
+  padding: 0.5rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  color: #635fc7;
+  font-weight: bold;
+}
