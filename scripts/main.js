@@ -5,16 +5,6 @@ import {
   setupNewTaskModalHandler,
 } from "./ui/modalHandlers.js";
 
-// function initTaskBoard() {
-//   const tasks = loadTasksFromStorage();
-//   clearExistingTasks();
-//   renderTasks(tasks);
-//   setupModalCloseHandler();
-//   setupNewTaskModalHandler();
-// }
-
-// document.addEventListener("DOMContentLoaded", initTaskBoard);
-
 // Fetch tasks from API
 function saveTasks(tasks) {
   localStorage.setItem("tasks", JSON.stringify(tasks));

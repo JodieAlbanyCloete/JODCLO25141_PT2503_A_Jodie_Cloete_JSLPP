@@ -59,6 +59,7 @@
     letter-spacing: 0.125rem; /* Makes heading more spaced */
     color: #828fa3;
     margin-left: 1rem;
+    margin-right: 5rem;
   }
 
   #side-modal-label {

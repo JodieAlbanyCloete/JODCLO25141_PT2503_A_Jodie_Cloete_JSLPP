@@ -115,3 +115,7 @@
   color: #635fc7;
   font-weight: bold;
 }
+
+.side-bar.hide {
+  left: -20rem;
+}
