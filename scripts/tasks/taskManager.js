@@ -100,7 +100,7 @@ export function deleteTask(taskId) {
     deleteEl.remove();
   }
   // 2. Remove from in-memory array
-  // tasks = tasks.filter((task) => task.id !== parseInt(taskId, 10));
+  tasks = tasks.filter((task) => task.id !== parseInt(taskId, 10));
 
   // 3. API delete request
   fetch(`https://jsl-kanban-api.vercel.app/tasks/${taskId}`, {
@@ -123,6 +123,9 @@ deleteBtn.addEventListener("click", (e) => {
 
   const taskId = document.getElementById("task-id").value;
   if (!taskId) return;
+
+  const confirmed = confirm("Are you sure you want to delete this task?");
+  if (!confirmed) return; // exit if user clicks "Cancel"
 
   // Call delete function
   deleteTask(taskId);
