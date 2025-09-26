@@ -101,3 +101,7 @@
 .theme-toggle input:checked ~ .slider {
   background-color: #f4f7fd;
 }
+
+.side-modal {
+  display: none;
+}
