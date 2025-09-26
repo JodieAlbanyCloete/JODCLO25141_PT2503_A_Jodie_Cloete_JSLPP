@@ -18,18 +18,33 @@ This project allows you to create, edit, and manage tasks visually in a board la
 - ⚡ Instant UI Updates: Changes reflect immediately in the board without a page reload.
 
 \*\* 📂 Project Structure
-kanban-project/
 │
-├── index.html # Main HTML page
-├── style.css # Global styles
-├── script.js # Main JS logic (if all-in-one)
+├── .vscode/                 
 │
-├── assets/ # Logos, icons, images
-├── tasks/ # JS modules for task handling
-│ ├── taskManager.js # Core task management (CRUD, storage, API sync)
-│ └── render.js # Rendering logic for the board & tasks
+├── assets/                  
 │
-└── README.md # Documentation
+├── scripts/                 
+│   ├── tasks/               
+│   │   ├── formUtils.js
+│   │   └── taskManager.js
+│   │
+│   ├── ui/                  
+│   │   ├── modalHandlers.js
+│   │   ├── render.js
+│   │   └── taskElement.js
+│   │
+│   ├── utils/               
+│   │   └── localStorage.js
+│   │
+│   └── main.js
+│
+├── index.html
+├── modal.css
+├── README.md
+├── sidebar.js
+├── styles.css
+├── stylesheet.css
+└── theme.js
 
 ⚙️ Setup
 
@@ -84,4 +99,5 @@ Due dates & reminders
 
 \*\* 🤝 Important Links
 Netlify - https://jodiecloetejslportfoliopiece.netlify.app/
-Zoom -
+Zoom - https://us06web.zoom.us/rec/share/5VAjw5gpT2xAwznlCYo2qsAL3gVgoWLF-laXaqDUctejB8qG2TBt1D9FeokISrOA.bWqCNhPFz55KjLRN?startTime=1758892567000
+Passcode: 8Nh1?Q9c
