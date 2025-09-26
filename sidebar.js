@@ -6,3 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     sidebar.classList.toggle("open"); // add/remove class
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hideSideBarBtn = document.querySelector(".hide-sidebar");
+  const navSidebar = document.getElementById("side-bar-div");
+
+  hideSideBarBtn.addEventListener("click", function () {
+    navSidebar.classList.toggle("hide");
+    console.log("button is clicked");
+  });
+});
